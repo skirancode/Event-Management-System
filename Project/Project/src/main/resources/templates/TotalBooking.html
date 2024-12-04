@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Speakers List - Conference Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px 20px;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .table-container {
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .actions button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+        }
+        .actions .view {
+            background-color: #17a2b8;
+        }
+        .actions .edit {
+            background-color: #ffc107;
+        }
+        .actions .delete {
+            background-color: #dc3545;
+        }
+        .add-speaker-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 style="text-align: center;">Conference Event</h2>
+        <a href="#">Dashboard</a>
+        <a href="#">User Management</a>
+        <a href="#" style="background-color: #007bff;">Bookings</a>
+        <a href="#">Venues</a>
+        <a href="#">Galleries</a>
+        <a href="#">Sponsors</a>
+        <a href="#">Prices</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <div class="main-content">
+        
+	<button>
+        <a href="/adminIndex">Back</a>
+		</button>
+        <div class="table-container">
+            <h2>Booking List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Contact No</th>
+                        <th>Address</th>
+                   
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="book: ${booking}">
+                        <td th:text="${book.id}">id</td>
+                        <td th:text="${book.name}">name</td>
+                        <td th:text="${book.date}">date</td>
+                        <td th:text="${book.time}">time</td>
+                        <td th:text="${book.contact}">contact</td>
+                        <td th:text="${book.address}">address</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

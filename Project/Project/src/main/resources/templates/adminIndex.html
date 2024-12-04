@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event Management System | Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px 20px;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .card a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 style="text-align: center;">Admin Panel</h2>
+        <a href="#">Dashboard</a>
+        <a href="#">Category</a>
+        
+        <a href="#">Events</a>
+        <a href="#">Manage Users</a>
+        <a href="#">Manage Bookings</a>
+       
+		<a href="/">LogOut</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Dashboard</h1>
+        <div class="dashboard">
+            <div class="card">
+               
+                <p>Listed Categories</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                
+                <p>Sponsors</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <p>Total Events</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <p>Total Registered Users</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <p>Total Bookings</p>
+                <a href="/totalbooking">View Details</a>
+            </div>
+            <div class="card">
+                <p>New Bookings</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <p>Confirmed Bookings</p>
+                <a href="#">View Details</a>
+            </div>
+            <div class="card">
+                <p>Cancelled Bookings</p>
+                <a href="#">View Details</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

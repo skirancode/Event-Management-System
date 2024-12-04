@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payments.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="payment-container">
+        <!-- Title -->
+        <h1>Choose Payment Method</h1>
+
+        <!-- Payment Modes -->
+        <div class="payment-modes" >
+            <button class="payment-mode active" data-mode="card">Credit/Debit Card</button>
+            <button class="payment-mode" data-mode="upi">UPI</button>
+            <button class="payment-mode" data-mode="netbanking">Net Banking</button>
+        </div>
+
+        <!-- Payment Forms -->
+        <div id="payment-forms">
+            <!-- Card Payment Form -->
+            <form id="card-form" action="/payments" method="POST" th:object="${pay}" class="payment-form">
+				<input type="hidden" id="readonly-input" value="card" readonly>
+                <div class="form-group">
+                    <label for="cardholder-name">Cardholder Name</label>
+                    <input type="text" id="cardholder-name" name="cardholder_name" placeholder="Enter your name" th:field="*{cardholder_name}" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card_number" placeholder="1234 5678 9012 3456" maxlength="19" th:field="*{card_number}" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="text" id="expiry-date" name="expiry_date" placeholder="MM/YY" maxlength="5" th:field="*{expiry_date}" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" th:field="*{cvv}" required>
+                </div>
+                <button type="submit" class="submit-button">Pay Now</button>
+            </form>
+
+            <!-- UPI Payment Form -->
+            <form id="upi-form" action="/payments" method="POST" th:object="${pay}" class="payment-form hidden">
+				<input type="hidden" id="readonly-input" value="upi" th:field="*{payment_mode}" readonly>
+
+                <div class="form-group">
+                    <label for="upi-id">UPI ID</label>
+                    <input type="text" id="upi-id" name="upi_id" placeholder="example@upi" th:field="*{upi_id}" required>
+                </div>
+                <div class="scanner">
+                    <img src="scanner.png" alt="Scan QR Code">
+                    <p>Scan QR Code with your UPI app</p>
+                </div>
+                <button type="submit" class="submit-button">Pay Now</button>
+            </form>
+
+            <!-- Net Banking Payment Form -->
+            <form id="netbanking-form" action="/payments" method="POST" th:object="${pay}" class="payment-form hidden">
+				<input type="hidden" id="readonly-input" value="net_banking"  readonly>
+
+                <div class="form-group">
+                    <label for="bank">Select Bank</label>
+                    <select id="bank" name="bank" th:field="*{bank_name}" required>
+                        <option value="" disabled selected>Select your bank</option>
+                        <option value="sbi">State Bank of India</option>
+                        <option value="hdfc">HDFC Bank</option>
+                        <option value="icici">ICICI Bank</option>
+                        <option value="axis">Axis Bank</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+	<script>
+	        // JavaScript to handle switching between payment modes
+	        const paymentModes = document.querySelectorAll('.payment-mode');
+	        const forms = document.querySelectorAll('.payment-form');
+
+	        paymentModes.forEach((button) => {
+	            button.addEventListener('click', () => {
+	                // Remove active class from all buttons
+	                paymentModes.forEach((btn) => btn.classList.remove('active'));
+	                // Add active class to clicked button
+	                button.classList.add('active');
+
+	                // Hide all forms
+	                forms.forEach((form) => form.classList.add('hidden'));
+
+	                // Show the selected form
+	                const mode = button.getAttribute('data-mode');
+	                document.getElementById(`${mode}-form`).classList.remove('hidden');
+	            });
+	        });   
+	    </script>
+</body>
+</html>

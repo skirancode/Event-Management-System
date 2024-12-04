@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" th:href="@{/contact.css}">
+</head>
+<body>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <div class="contact-info">
+      <div class="info-block">
+        <i class="icon">📍</i>
+        <h3>Our Office Address</h3>
+        <p >
+          <!-- Default placeholder for Thymeleaf value -->
+          Palm Court Bldg M, 501/B, 5th Floor, New Link Road, Beside Goregaon Sports Complex, Malad West, Mumbai, Maharashtra 400064
+        </p>
+      </div>
+      <div class="info-block">
+        <i class="icon">💬</i>
+        <h3>General Enquiries</h3>
+        <p >
+         eventcorner@gmail.com
+        </p>
+      </div>
+      <div class="info-block">
+        <i class="icon">📞</i>
+        <h3>Call Us</h3>
+        <p >
+          +91-8888888888
+        </p>
+      </div>
+      
+    </div>
+    <div class="form-container">
+      <form th:action="@{/submitContact}" method="post">
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email ID" required>
+        <input type="tel" name="mobileNumber" placeholder="Mobile Number" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

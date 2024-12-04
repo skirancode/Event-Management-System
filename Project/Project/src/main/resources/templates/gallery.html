@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Corner Gallery</title>
+    <!-- Link to CSS (assuming the CSS is in the static folder) -->
+    <link rel="stylesheet" th:href="@{/gall.css}">
+</head>
+<body>
+	<header>
+	        <div class="logo">
+	            <h1 >EVENT CORNER</h1>
+	        </div>
+	        <nav>
+	            <ul>
+	                <li><a th:href="@{/}">Home</a></li>
+	                <li><a th:href="@{/service}">Services</a></li>
+	                <li><a th:href="@{/about}">About Us</a></li>
+	                <li><a th:href="@{/gallery}">Gallery</a></li>
+	                <li><a th:href="@{/contact}">Contact Us</a></li>
+	              
+	            </ul>
+	        </nav>
+	    </header>
+
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="image-container">
+            <!-- Display dynamic images using Thymeleaf if needed -->
+            <div class="image-box">
+                <img th:src="@{/image/b1.jpeg}" alt="Image 1">
+                <p>Image 1 Description</p>
+            </div>
+            <div class="image-box">
+                <img th:src="@{/image/b2.jpeg}" alt="Image 2">
+                <p>Image 2 Description</p>
+            </div>
+            <div class="image-box">
+                <img th:src="@{/image/b3.jpeg}" alt="Image 3">
+                <p>Image 3 Description</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+
+    <!-- Link to JS (assuming the JS is in the static folder) -->
+    
+</body>
+</html>

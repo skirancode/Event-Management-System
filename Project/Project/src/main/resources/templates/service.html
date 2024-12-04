@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Our Services</title>
+	<link rel="stylesheet" href="services.css">
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+			<h1>EVENT CORNER</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a th:href="@{/}">Home</a></li>
+				<li><a th:href="@{/service}">Services</a></li>
+				<li><a th:href="@{/about}">About Us</a></li>
+				<li><a th:href="@{/gallery}">Gallery</a></li>
+				<li><a th:href="@{/contact}">Contact Us</a></li>
+
+			</ul>
+		</nav>
+	</header>
+	<div class="services-container">
+		<h2>Services</h2>
+		<div class="services">
+			<div class="service-card">
+				<img src="image/w1.jpeg" alt="Wedding Decoration">
+				<h3>Wedding Decoration</h3>
+				<p>We create a divine experience that you will never forget, keeping your taste, style and budget in
+					mind.</p>
+				<a href="/weddingPage" class="enquire-btn">Enquire Now</a>
+			</div>
+			<div class="service-card">
+				<img src="image/image2.jpeg" alt="Reception & Cocktail Parties">
+				<h3>Engagement Decoration</h3>
+				<p>Whether the mood is traditional or fashionable, we create an atmosphere that is warm and
+					personalized.</p>
+				<a href="/engagement" class="enquire-btn">Enquire Now</a>
+			</div>
+			<div class="service-card">
+				<img src="image/birthday.jpg" alt="Theme Parties">
+				<h3>Birthday Celebration</h3>
+				<p>We portray the chosen theme in all areas from the invitation, decor, food and other party factors.
+				</p>
+				<a href="/birthday" class="enquire-btn">Enquire Now</a>
+			</div>
+			<div class="service-card">
+				<img src="image/n3.jpeg" alt="Corporate Events">
+				<h3>Naming Ceremony</h3>
+				<p>We provide event solutions for a wide range of events like conventions, trade shows, meetings &
+					conferences.</p>
+				<a href="/naming" class="enquire-btn">Enquire Now</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

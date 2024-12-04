@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Booking</title>
+	<link rel="stylesheet" href="booking.css">
+</head>
+
+<body>
+	<div class="form-container">
+		<div class="form-header">
+			<h1>Booking</h1>
+		</div>
+		<form th:action="@{/booking}" th:object="${book}" method="post">
+			<fieldset>
+				<legend>Booking Details</legend>
+
+				<!-- User Name -->
+				<div class="form-group">
+					<label for="user_name">User Name</label>
+					<input type="text" id="user_name" name="user_name" th:field="*{name}"
+						placeholder="Enter your full name" required>
+				</div>
+
+				<!-- Event Date -->
+				<div class="form-group">
+					<label for="event_date">Event Date</label>
+					<input type="date" id="event_date" name="event_date" th:field="*{date}" required>
+				</div>
+
+				<!-- Event Time -->
+				<div class="form-group">
+					<label for="time">Time</label>
+					<input type="time" id="time" name="time" th:field="*{time}" required>
+				</div>
+
+				<!-- Contact Number -->
+				<div class="form-group">
+					<label for="contact_no">Contact Number</label>
+					<input type="tel" id="contact_no" name="contact_no" th:field="*{contact}"
+						placeholder="Enter your contact number" required>
+				</div>
+
+				<!-- Contact Number -->
+				<div class="form-group">
+					<label for="contact_no">Address</label>
+					<input type="tel" id="Address" name="Address" th:field="*{address}"
+						placeholder="Enter your Address" required>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn">Submit</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<footer>
+	</footer>
+</body>
+
+</html>

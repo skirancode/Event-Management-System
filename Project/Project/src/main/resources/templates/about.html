@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Corner</title>
+    <link th:href="@{/abouts.css}" rel="stylesheet">
+</head>
+<body>
+	<header>
+			<div class="logo">
+				<h1>EVENT CORNER</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a th:href="@{/}">Home</a></li>
+					<li><a th:href="@{/service}">Services</a></li>
+					<li><a th:href="@{/about}">About Us</a></li>
+					<li><a th:href="@{/gallery}">Gallery</a></li>
+					<li><a th:href="@{/contact}">Contact Us</a></li>
+
+				</ul>
+			</nav>
+		</header>
+
+    <section class="about-us">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Bringing Imagination to Reality</p>
+            <p>
+                Our dedicated team weaves dreams, emotions, relations, and responsibilities. 
+                Our presence has now become global as we have fulfilled the dreams of many individuals, corporate, and families. 
+                The inspiration of our team is customers’ desires and their responsibilities. 
+                We, a dummy company situated in area, city, state, are specialized in offering complete service for weddings, seminars, etc.
+            </p>
+        </div>
+        <div class="image">
+            <img th:src="@{/image/flowers.jpg}" alt="Bouquet of flowers">
+        </div>
+    </section>
+</body>
+</html>

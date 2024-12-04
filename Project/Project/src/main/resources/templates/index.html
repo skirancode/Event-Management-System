@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">Event Corner</title>
+    <link rel="stylesheet" th:href="@{/index.css}">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="social-icons">
+            
+            <a th:href="@{/adminLogin}"><i>🅾</i></a>
+            
+        </div>
+        <div class="contact-details">
+            <span>📞 970940495</span>
+            <span>📧 eventcorner@gmail.com</span>
+        </div>
+        <div class="location">
+            <span>📍 Pune</span>
+        </div>
+    </div>
+
+    <!-- Logo and Navigation Bar -->
+    <header>
+        <div class="logo">
+            <h1 >EVENT CORNER</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/service}">Services</a></li>
+                <li><a th:href="@{/about}">About Us</a></li>
+                <li><a th:href="@{/gallery}">Gallery</a></li>
+                <li><a th:href="@{/contact}">Contact Us</a></li>
+              
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay">
+            <h2 th:text="${heroText}">We Organize All Your Special Events</h2>
+            <button class="cta" th:onclick="|window.location='@{/userLogin}'|">Enquire Now</button>
+        </div>
+    </section>
+</body>
+</html>
