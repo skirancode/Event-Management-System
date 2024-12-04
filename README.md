@@ -20,3 +20,7 @@ Responsive Design:
 
 Fully responsive, ensuring compatibility across devices like desktop, tablet, and mobile.
 
+Technologies used :
+Frontend : Thymeleaf , html, css, javascript
+Backend : Java,SpringBoot
+Database : MySql
